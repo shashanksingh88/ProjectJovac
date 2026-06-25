@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Academia Sales CRM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">A</span>
+        <div>
+          <strong>Academia CRM</strong>
+          <small>B2B training partnerships</small>
+        </div>
+      </div>
+      <nav>
+        <a class="active" href="#dashboard">Dashboard</a>
+        <a href="#leads">Institution Leads</a>
+        <a href="#automation">Automation</a>
+        <a href="#ai">AI Intelligence</a>
+      </nav>
+      <div class="owner-card">
+        <small>Current Sales Owner</small>
+        <strong id="ownerName">Priya Sharma</strong>
+        <span>North & Central India</span>
+      </div>
+    </aside>
+
+    <main>
+      <section class="topbar">
+        <div>
+          <h1>AI-Powered B2B Academia Sales CRM</h1>
+          <p>Manage institutional outreach, meetings, proposals, and partnership conversion from one sales workspace.</p>
+        </div>
+        <button class="primary" id="seedReminder">Run Daily AI Review</button>
+      </section>
+
+      <section id="dashboard" class="metrics" aria-label="Dashboard metrics">
+        <article>
+          <small>Total Institutions Contacted</small>
+          <strong id="metricContacted">0</strong>
+        </article>
+        <article>
+          <small>Active Leads</small>
+          <strong id="metricActive">0</strong>
+        </article>
+        <article>
+          <small>Meetings Scheduled</small>
+          <strong id="metricMeetings">0</strong>
+        </article>
+        <article>
+          <small>Conversion Status</small>
+          <strong id="metricConversion">0%</strong>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <div id="leads" class="panel lead-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Institution Lead Management</h2>
+              <p>Capture college details, contact data, source, status, and program interest.</p>
+            </div>
+            <button id="addLead">+ Add Lead</button>
+          </div>
+
+          <form id="leadForm" class="lead-form">
+            <input name="name" placeholder="College / University Name" required />
+            <input name="location" placeholder="Location" required />
+            <input name="contact" placeholder="Contact Person" required />
+            <input name="email" placeholder="Email / Phone" required />
+            <select name="type">
+              <option>Private University</option>
+              <option>Government College</option>
+              <option>Autonomous Institute</option>
+              <option>Engineering College</option>
+            </select>
+            <input name="strength" type="number" min="100" placeholder="Student Strength" required />
+            <select name="interest">
+              <option>Full Stack Development Bootcamp</option>
+              <option>Cloud & DevOps Workshop</option>
+              <option>AI/ML Industry Initiative</option>
+              <option>Cybersecurity Training</option>
+              <option>Placement Readiness Program</option>
+            </select>
+            <select name="source">
+              <option>Referral</option>
+              <option>LinkedIn Outreach</option>
+              <option>Education Expo</option>
+              <option>Inbound Website</option>
+              <option>Past Partnership</option>
+            </select>
+            <select name="status">
+              <option>New Lead</option>
+              <option>Contacted</option>
+              <option>Meeting Scheduled</option>
+              <option>Proposal Sent</option>
+              <option>Negotiation</option>
+              <option>Closed</option>
+            </select>
+            <button class="primary" type="submit">Save Lead</button>
+          </form>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Institution</th>
+                  <th>Contact</th>
+                  <th>Interest</th>
+                  <th>Status</th>
+                  <th>AI Score</th>
+                  <th>Next Action</th>
+                </tr>
+              </thead>
+              <tbody id="leadRows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside id="ai" class="panel intelligence">
+          <h2>AI Lead Intelligence</h2>
+          <div id="selectedLead" class="selected-lead"></div>
+          <label>
+            Personalized Outreach Message
+            <textarea id="outreachMessage" rows="7"></textarea>
+          </label>
+          <div class="quick-actions">
+            <button id="advanceStatus">Update Status</button>
+            <button id="createFollowUp">Create Follow-up</button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="lower-grid">
+        <div class="panel pipeline">
+          <div class="panel-head">
+            <div>
+              <h2>Sales Pipeline</h2>
+              <p>Lead lifecycle from new inquiry to closed partnership.</p>
+            </div>
+          </div>
+          <div id="pipelineStages" class="stages"></div>
+        </div>
+
+        <div id="automation" class="panel automation">
+          <div class="panel-head">
+            <div>
+              <h2>Follow-Up Automation</h2>
+              <p>AI reviews priority, assigns owner, creates tasks, and sends notifications.</p>
+            </div>
+          </div>
+          <ol class="flow">
+            <li>New Lead Added</li>
+            <li>AI Analyzes Lead Priority</li>
+            <li>Assign Sales Owner</li>
+            <li>Create Follow-up Task</li>
+            <li>Send Notification</li>
+          </ol>
+          <div id="tasks" class="tasks"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
